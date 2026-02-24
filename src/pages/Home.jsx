@@ -95,16 +95,15 @@ export default function Home() {
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-              분산 시스템과 데이터 파이프라인에 강한
-              <br />
-              <span className="text-primary-600">풀스택 개발자</span>입니다
+              <span className="block">분산 시스템 · 데이터 파이프라인</span>
+              <span className="text-primary-600">풀스택 개발자</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              클라우드 네이티브 환경에서 안정적이고 확장 가능한 시스템을 설계합니다.
+              안정적이고 확장 가능한 시스템을 설계합니다.
               <br className="hidden md:block" />
-              MSA 아키텍처부터 AI 기반 데이터 분석까지, End-to-End 개발이 가능합니다.
+              MSA부터 AI 데이터 분석까지, End-to-End 개발이 가능합니다.
             </p>
 
             {/* CTA Buttons */}
