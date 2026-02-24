@@ -157,17 +157,17 @@ export default function Projects() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-slate-900">
+      <section className="py-16 bg-slate-50 border-t border-slate-200">
         <div className="section-container text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
             프로젝트에 대해 더 궁금한 점이 있으신가요?
           </h2>
-          <p className="text-slate-400 mb-8 max-w-xl mx-auto">
+          <p className="text-slate-600 mb-8 max-w-xl mx-auto">
             기술적인 내용이나 구현 방식에 대해 자세히 이야기 나누고 싶습니다.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

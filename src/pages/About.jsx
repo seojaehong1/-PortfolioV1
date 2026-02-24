@@ -187,54 +187,119 @@ export default function About() {
         </div>
       </section>
 
-      {/* Awards Section */}
+      {/* Featured Award - 총장상 학년대표 */}
+      <section className="py-16 bg-white border-b border-slate-100">
+        <div className="section-container">
+          <div className="max-w-5xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <span className="text-sm font-medium text-slate-500 tracking-wider uppercase">Featured Achievement</span>
+              <h2 className="mt-2 text-3xl font-bold text-slate-900">
+                329명 중 단 한 명, 학년 대표
+              </h2>
+              <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+                3년 전문학사 + 1년 학사 전공심화, 4년간의 꾸준한 노력이<br />
+                졸업식 학년대표 총장상 수여라는 결실로 이어졌습니다.
+              </p>
+            </div>
+
+            {/* Content Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              {/* Left - Award Info */}
+              <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-slate-200 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-1">학업우수상 총장상</h3>
+                    <p className="text-slate-500 text-sm">동서울대학교 · 2026.02</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 bg-slate-400 rounded-full"></div>
+                    <p className="text-slate-600 text-sm">졸업생 <span className="text-slate-900 font-medium">329명</span> 중 학년대표로 선정</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 bg-slate-400 rounded-full"></div>
+                    <p className="text-slate-600 text-sm">4년 전 과정 <span className="text-slate-900 font-medium">최상위권</span> 학업 성취도 유지</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 bg-slate-400 rounded-full"></div>
+                    <p className="text-slate-600 text-sm">전문학사 → 학사 <span className="text-slate-900 font-medium">3+1 과정</span> 완주</p>
+                  </div>
+                </div>
+
+                {/* Journey Timeline */}
+                <div className="pt-6 border-t border-slate-200">
+                  <p className="text-xs text-slate-500 uppercase tracking-wider mb-4">4년의 여정</p>
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className="px-3 py-1.5 bg-slate-200 text-slate-600 rounded">2022</span>
+                    <div className="flex-1 h-px bg-slate-200"></div>
+                    <span className="px-3 py-1.5 bg-slate-900 text-white rounded font-medium">2026</span>
+                  </div>
+                  <div className="flex justify-between mt-2 text-xs text-slate-500">
+                    <span>전문학사 입학</span>
+                    <span>학년대표 수상</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right - Video */}
+              <div className="bg-slate-50 rounded-xl overflow-hidden border border-slate-200">
+                <div className="aspect-video bg-slate-100">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    poster="/images/about/testimonial_2.jpg"
+                  >
+                    <source src="/images/about/award_video.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div className="p-4 text-center">
+                  <p className="text-slate-500 text-sm">졸업식 학년대표 수상 영상</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Other Awards */}
       <section className="py-16 bg-slate-50">
         <div className="section-container">
           <div className="text-center mb-12">
             <span className="text-sm font-medium text-slate-500 tracking-wider uppercase">Awards</span>
-            <h2 className="mt-2 text-3xl font-bold text-slate-900">수상 경력</h2>
+            <h2 className="mt-2 text-3xl font-bold text-slate-900">기타 수상 경력</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {awards.map((award, idx) => (
-              <div
-                key={award.name}
-                className="relative bg-white rounded-xl p-8 border border-slate-200 hover:border-slate-300 transition-colors"
-              >
-                {/* Number Badge */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 bg-slate-900 text-white rounded-full flex items-center justify-center text-sm font-semibold">
-                  {idx + 1}
+          {/* 최종 프로젝트 대상 */}
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="bg-white rounded-xl p-8 border border-slate-200">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
                 </div>
-
-                {/* Award Name */}
-                <h3 className="text-lg font-bold text-slate-900 mb-1 mt-2">
-                  {award.name}
-                </h3>
-
-                {/* Organization & Year */}
-                <div className="flex items-center gap-2 mb-4 text-slate-500 text-sm">
-                  <span>{award.organization}</span>
-                  <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
-                  <span>{award.year}</span>
-                </div>
-
-                {/* Description */}
-                <p className="text-sm text-slate-600 mb-4">
-                  {award.description}
-                </p>
-
-                {/* Achievement */}
-                <div className="pt-4 border-t border-slate-100">
-                  <p className="text-sm text-slate-700">
-                    {award.achievement}
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">최종 프로젝트 발표회 대상</h3>
+                  <p className="text-slate-500 text-sm mb-3">중앙정보기술인재개발원 · 2026.02</p>
+                  <p className="text-slate-600 text-sm">
+                    MSA 기반 카페 관리 시스템과 AI 가격 예측 서비스를 통합한 프로젝트로<br />
+                    기술적 완성도와 실무 능력을 인정받음
                   </p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
 
           {/* 장학금 & 추가 수상 */}
-          <div className="mt-12 max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h3 className="text-sm font-medium text-slate-500 mb-6 text-center uppercase tracking-wider">장학금 & 추가 수상</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {scholarships.map((item) => (
@@ -378,30 +443,30 @@ export default function About() {
       </section>
 
       {/* Aspiration */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="section-container">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-slate-400 text-lg leading-relaxed mb-8">
+            <p className="text-slate-600 text-lg leading-relaxed mb-8">
               시스템의 안정성을 책임지는 모니터링 기술의 핵심은
-              <span className="text-white font-medium"> 관찰 가능성(Observability)</span>에 있다는 것을
+              <span className="text-slate-900 font-medium"> 관찰 가능성(Observability)</span>에 있다는 것을
               프로젝트를 통해 깨달았습니다.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 text-sm mb-12">
-              <span className="px-4 py-2 bg-slate-800 text-slate-400 rounded-lg border border-slate-700">
+              <span className="px-4 py-2 bg-white text-slate-600 rounded-lg border border-slate-200">
                 서비스 디스커버리
               </span>
-              <span className="px-4 py-2 bg-slate-800 text-slate-400 rounded-lg border border-slate-700">
+              <span className="px-4 py-2 bg-white text-slate-600 rounded-lg border border-slate-200">
                 분산 시스템 모니터링
               </span>
-              <span className="px-4 py-2 bg-slate-800 text-slate-400 rounded-lg border border-slate-700">
+              <span className="px-4 py-2 bg-white text-slate-600 rounded-lg border border-slate-200">
                 장애 전파 방지
               </span>
             </div>
 
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-lg font-medium hover:bg-slate-100 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg font-medium hover:bg-slate-800 transition-colors"
             >
               연락하기
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
