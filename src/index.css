@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pretendard 폰트 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+/* 커스텀 스타일 - 라이트 모드 */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+    font-family: 'Pretendard', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-slate-900 mb-8;
+  }
+
+  .card {
+    @apply bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .card-dark {
+    @apply bg-slate-50 border border-slate-200 rounded-xl;
+  }
+
+  .tag {
+    @apply px-3 py-1 text-xs font-medium rounded-full bg-slate-100 text-slate-600 border border-slate-200;
+  }
+
+  .tag-primary {
+    @apply px-3 py-1 text-xs font-medium rounded-full bg-primary-50 text-primary-700 border border-primary-200;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border border-slate-300 text-slate-700 rounded-lg font-medium hover:bg-slate-50 transition-colors;
+  }
+}
