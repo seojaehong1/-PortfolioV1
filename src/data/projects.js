@@ -20,7 +20,7 @@ export const projects = [
       { name: 'Order Service', port: '8002', desc: '주문 처리, 트랜잭션 관리', category: 'Core' },
       { name: 'Board Service', port: '8006', desc: '게시판, 댓글, 알림', category: 'Core' },
       { name: 'Inventory Service', port: '8008', desc: '재고 관리, 실시간 동기화', category: 'Core' },
-      { name: 'Cust Service', port: '8003', desc: '고객 문의, 메시지 큐 처리', category: 'Support' },
+      { name: 'Admin Service', port: '8007', desc: '관리자 대시보드, 회원/상품 관리', category: 'Admin' },
       { name: 'Frontend Service', port: '8005', desc: 'Thymeleaf SSR 웹 UI', category: 'Frontend' },
     ],
     // 핵심 기능
@@ -111,7 +111,7 @@ try {
           { text: '4-Model Ensemble로 가격대별 전문화된 예측', highlight: '4-Model Ensemble' },
           { text: 'confidence_score로 예측 신뢰도 수치화 (0.0~1.0)', highlight: 'confidence_score' },
           { text: 'KNN 기반 유사 상품 시세 추세 분석', highlight: 'KNN 기반' },
-          { text: '25일간 가격 변동률 및 일평균 변동률 제공', highlight: '가격 변동률' },
+          { text: '10일간 가격 변동률 및 일평균 변동률 제공', highlight: '가격 변동률' },
         ],
         techDetail: '저가/중저가/중고가/고가 구간별로 학습된 4개 모델의 예측을 앙상블하여 MAPE 8% 이하 달성',
       },
@@ -154,7 +154,7 @@ try {
     ],
     // 파이프라인 단계
     pipeline: [
-      { step: '01', title: '데이터 수집', tech: 'Selenium', desc: 'WebDriver 기반 동적 크롤링으로 3,600+ 상품 정보 수집' },
+      { step: '01', title: '데이터 수집', tech: 'Selenium', desc: '4개 카테고리 × 300개 상품, 데이터 증강으로 3,600+ 학습 데이터 구축' },
       { step: '02', title: '데이터 저장', tech: 'PostgreSQL', desc: '정규화된 스키마로 상품, 가격 히스토리, 벤치마크 저장' },
       { step: '03', title: 'AI 추론', tech: 'PyTorch', desc: '4-Model Ensemble 가격 예측, KNN 시세 분석' },
       { step: '04', title: '벡터 검색', tech: 'Weaviate', desc: 'CLIP 이미지 임베딩, 코사인 유사도 검색' },
