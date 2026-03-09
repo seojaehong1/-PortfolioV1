@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 
-// 프로젝트 데이터 - WatchTek 맞춤
+// 프로젝트 데이터 - 인프라/DevOps 강조
 const projects = [
   {
     id: 'msa',
-    title: '분산 시스템 모니터링이 가능한 MSA 플랫폼',
+    title: 'AWS EKS 기반 MSA 인프라 구축',
     description:
-      'Eureka 기반 서비스 디스커버리와 실시간 헬스체크, Gateway를 통한 트래픽 라우팅 및 로드밸런싱을 구현한 9개 마이크로서비스 시스템.',
-    tags: ['Spring Cloud', 'Eureka', 'Gateway', 'RabbitMQ', 'Kubernetes'],
+      '9개 마이크로서비스를 AWS EKS에 배포하고, HPA로 자동 스케일링 구성. Prometheus/Grafana 모니터링과 k6 부하테스트로 성능 최적화.',
+    tags: ['AWS EKS', 'Kubernetes', 'HPA', 'Prometheus', 'Grafana'],
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
@@ -17,10 +17,10 @@ const projects = [
   },
   {
     id: 'ai',
-    title: '실시간 데이터 수집 및 분석 파이프라인',
+    title: '대규모 데이터 파이프라인 구축 및 운영',
     description:
-      'Playwright 기반 비동기 크롤링부터 PostgreSQL 저장, PyTorch 모델 추론, Weaviate 벡터 검색까지 End-to-End 데이터 파이프라인 구축.',
-    tags: ['PyTorch', 'PostgreSQL', 'Weaviate', 'Playwright', 'Flask'],
+      'Playwright 기반 비동기 크롤러로 3,600+ 데이터 수집. PostgreSQL 저장, AI 모델 추론까지 End-to-End 파이프라인 구축 및 모니터링.',
+    tags: ['Python', 'PostgreSQL', 'Docker', 'Data Pipeline'],
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
@@ -33,17 +33,8 @@ const projects = [
 // 핵심 역량
 const coreCompetencies = [
   {
-    title: '분산 시스템',
-    desc: 'MSA 설계 및 서비스 간 통신',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-      </svg>
-    ),
-  },
-  {
-    title: '클라우드 네이티브',
-    desc: 'Docker, Kubernetes 운영',
+    title: 'AWS EKS',
+    desc: 'Kubernetes 클러스터 설계/운영',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -51,20 +42,29 @@ const coreCompetencies = [
     ),
   },
   {
-    title: '데이터 파이프라인',
-    desc: '수집, 저장, 분석, 시각화',
+    title: 'Auto Scaling',
+    desc: 'HPA 기반 자동 스케일링',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       </svg>
     ),
   },
   {
-    title: '실시간 모니터링',
-    desc: '헬스체크 및 로그 분석',
+    title: 'Monitoring',
+    desc: 'Prometheus/Grafana 구성',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'CI/CD',
+    desc: 'GitHub Actions + ArgoCD',
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
       </svg>
     ),
   },
@@ -72,12 +72,12 @@ const coreCompetencies = [
 
 // 기술 스택
 const techStack = [
-  { name: 'Java', category: 'Backend' },
-  { name: 'Spring Boot', category: 'Backend' },
-  { name: 'Python', category: 'Data' },
+  { name: 'AWS EKS', category: 'Cloud' },
   { name: 'Kubernetes', category: 'DevOps' },
   { name: 'Docker', category: 'DevOps' },
-  { name: 'PostgreSQL', category: 'Database' },
+  { name: 'Prometheus', category: 'Monitoring' },
+  { name: 'Grafana', category: 'Monitoring' },
+  { name: 'ArgoCD', category: 'CI/CD' },
 ]
 
 export default function Home() {
@@ -90,20 +90,20 @@ export default function Home() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-8">
               <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
-              <span className="text-sm font-medium text-primary-700">Full-Stack Developer</span>
+              <span className="text-sm font-medium text-primary-700">DevOps Engineer</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-              <span className="block">분산 시스템 · 데이터 파이프라인</span>
-              <span className="text-primary-600">풀스택 개발자</span>
+              <span className="block">AWS EKS · Kubernetes</span>
+              <span className="text-primary-600">인프라 엔지니어</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              안정적이고 확장 가능한 시스템을 설계합니다.
+              안정적이고 확장 가능한 인프라를 설계합니다.
               <br className="hidden md:block" />
-              MSA부터 AI 데이터 분석까지, End-to-End 개발이 가능합니다.
+              9개 MSA 서비스 배포부터 모니터링, 자동 스케일링까지.
             </p>
 
             {/* CTA Buttons */}
@@ -156,7 +156,7 @@ export default function Home() {
             <span className="text-sm font-medium text-primary-600 tracking-wider uppercase">Projects</span>
             <h2 className="mt-2 text-3xl font-bold text-slate-900">주요 프로젝트</h2>
             <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-              실무 수준의 분산 시스템 설계와 데이터 파이프라인 구축 경험
+              AWS EKS 기반 인프라 구축과 모니터링 시스템 운영 경험
             </p>
           </div>
 
@@ -227,9 +227,9 @@ export default function Home() {
               <span className="text-sm font-medium text-primary-600 tracking-wider uppercase">Skills</span>
               <h2 className="mt-2 text-3xl font-bold text-slate-900 mb-6">기술 스택</h2>
               <p className="text-slate-600 leading-relaxed mb-8">
-                백엔드 개발부터 클라우드 인프라, 데이터 엔지니어링까지
+                AWS 클라우드 인프라부터 Kubernetes 오케스트레이션,
                 <br />
-                End-to-End 개발에 필요한 기술 스택을 보유하고 있습니다.
+                모니터링 및 CI/CD 파이프라인까지 DevOps 기술 스택을 보유하고 있습니다.
               </p>
               <Link
                 to="/skills"
@@ -246,12 +246,12 @@ export default function Home() {
             <div className="lg:w-1/2">
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  { name: 'Java', icon: '☕' },
-                  { name: 'Spring', icon: '🌱' },
-                  { name: 'Python', icon: '🐍' },
-                  { name: 'Docker', icon: '🐳' },
+                  { name: 'AWS', icon: '☁️' },
                   { name: 'K8s', icon: '☸️' },
-                  { name: 'PostgreSQL', icon: '🐘' },
+                  { name: 'Docker', icon: '🐳' },
+                  { name: 'Prometheus', icon: '🔥' },
+                  { name: 'Grafana', icon: '📊' },
+                  { name: 'ArgoCD', icon: '🔄' },
                 ].map((skill) => (
                   <div
                     key={skill.name}
@@ -274,7 +274,7 @@ export default function Home() {
             함께 일하고 싶으신가요?
           </h2>
           <p className="text-slate-600 mb-8 max-w-xl mx-auto">
-            분산 시스템 설계, 데이터 파이프라인 구축, 클라우드 인프라 관리에 대해
+            AWS 클라우드 인프라, Kubernetes 운영, CI/CD 파이프라인 구축에 대해
             이야기 나누고 싶습니다.
           </p>
           <Link

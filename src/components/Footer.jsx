@@ -11,7 +11,7 @@ export default function Footer() {
               Portfolio
             </Link>
             <p className="mt-2 text-sm text-slate-500">
-              분산 시스템 · 데이터 파이프라인
+              AWS EKS · Kubernetes · DevOps
             </p>
           </div>
 

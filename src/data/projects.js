@@ -3,11 +3,11 @@
 export const projects = [
   {
     id: 'msa',
-    title: '분산 시스템 모니터링이 가능한 MSA 플랫폼',
-    shortDesc: 'Eureka 기반 서비스 디스커버리와 실시간 헬스체크, Gateway를 통한 트래픽 라우팅 및 로드밸런싱을 구현한 9개 마이크로서비스 시스템.',
-    thumbnail: '/images/msa-thumbnail.png', // 추후 이미지 추가 가능
-    category: 'Backend / Infrastructure',
-    techStack: ['Java 17', 'Spring Boot 3.1', 'Spring Cloud', 'Netflix Eureka', 'Spring Gateway', 'RabbitMQ', 'JWT', 'OAuth2', 'Kubernetes'],
+    title: 'AWS EKS 기반 MSA 인프라 구축 및 운영',
+    shortDesc: '9개 마이크로서비스를 AWS EKS에 배포하고, HPA 자동 스케일링과 Prometheus/Grafana 모니터링 구성으로 안정적인 인프라 운영.',
+    thumbnail: '/images/msa-thumbnail.png',
+    category: 'Infrastructure / DevOps',
+    techStack: ['AWS EKS', 'Kubernetes', 'HPA', 'ALB', 'ECR', 'Prometheus', 'Grafana', 'Helm', 'Docker', 'GitHub Actions'],
     github: 'https://github.com/seojaehong1/teamprojectv1',
     demoVideo: '/images/msa/MSA_demo.mp4',
     featured: true,
@@ -26,29 +26,48 @@ export const projects = [
     // 핵심 기능
     keyFeatures: [
       {
-        title: 'Eureka Dashboard 활용',
-        subtitle: '실시간 서비스 상태 모니터링',
-        color: 'emerald',
-        items: [
-          { text: '30초 주기 Heartbeat로 9개 서비스 생존 여부 실시간 체크', highlight: '30초 주기 Heartbeat' },
-          { text: '서비스 인스턴스 UP/DOWN 상태를 Dashboard에서 즉시 확인', highlight: 'UP/DOWN 상태' },
-          { text: '90초 동안 Heartbeat 없으면 자동 등록 해제 → Gateway 라우팅에서 제외', highlight: '자동 등록 해제' },
-          { text: 'Self-preservation 모드로 네트워크 장애 vs 서비스 장애 구분', highlight: '네트워크 장애 vs 서비스 장애 구분' },
-        ],
-        quote: '개발 중 Order Service가 무한루프에 빠졌을 때, Eureka Dashboard에서 해당 인스턴스가 DOWN으로 바뀌는 것을 보고 빠르게 원인을 파악할 수 있었습니다.',
-      },
-      {
-        title: 'Gateway 라우팅 및 로드밸런싱',
-        subtitle: '단일 진입점에서 서비스 분배',
+        title: 'AWS EKS 클러스터 구성',
+        subtitle: '9개 MSA 서비스 Kubernetes 배포',
         color: 'primary',
         items: [
-          { text: 'lb:// prefix로 Eureka 연동 로드밸런싱 (Round-Robin)', highlight: 'lb:// prefix' },
-          { text: 'Path Predicate로 URL 패턴별 서비스 라우팅 설정', highlight: 'Path Predicate' },
-          { text: '서비스 다운 시 Eureka 자동 감지 → 정상 인스턴스로만 분배', highlight: '정상 인스턴스로만 분배' },
-          { text: 'CORS 설정을 Gateway에서 통합 관리 (K8s 환경 지원)', highlight: 'CORS 설정' },
+          { text: '9개 마이크로서비스(Eureka, Gateway, Member, Product, Order, Inventory, Board, Admin, Frontend) EKS 배포', highlight: '9개 마이크로서비스' },
+          { text: 'ECR(Elastic Container Registry)로 컨테이너 이미지 관리', highlight: 'ECR' },
+          { text: 'ALB(Application Load Balancer) 설정으로 서비스 라우팅', highlight: 'ALB' },
+          { text: 'k8s 디렉토리 구조(base, hpa, services, mysql) 설계로 배포 설정 체계화', highlight: 'k8s 디렉토리 구조' },
         ],
-        codeExample: `spring.cloud.gateway.routes[0].uri=lb://order-service
-spring.cloud.gateway.routes[0].predicates[0]=Path=/api/order/**`,
+        quote: '팀원 3명이 백엔드 개발에 집중할 수 있도록 인프라 환경 구축을 전담했습니다.',
+      },
+      {
+        title: 'HPA 자동 스케일링',
+        subtitle: '트래픽 변동 대응 Pod 자동 확장',
+        color: 'emerald',
+        items: [
+          { text: 'CPU 70%, 메모리 80% 임계값 설정으로 자동 스케일링 트리거', highlight: 'CPU 70%, 메모리 80%' },
+          { text: '최소 2개 → 최대 10개 Pod 자동 확장/축소', highlight: '최소 2개 → 최대 10개' },
+          { text: 'Scale-up 즉시 실행, Scale-down 5분 안정화 기간 후 실행', highlight: '5분 안정화 기간' },
+          { text: '트래픽 변동에 안정적으로 대응하는 인프라 구성', highlight: '안정적 대응' },
+        ],
+        codeExample: `# HPA 설정 예시
+spec:
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        averageUtilization: 70`,
+      },
+      {
+        title: 'Prometheus/Grafana 모니터링',
+        subtitle: '실시간 메트릭 수집 및 시각화',
+        color: 'blue',
+        items: [
+          { text: 'Prometheus로 CPU, 메모리, 네트워크 메트릭 수집', highlight: 'Prometheus' },
+          { text: 'Grafana 대시보드로 주요 서비스 상태 실시간 시각화', highlight: 'Grafana 대시보드' },
+          { text: 'Pod 리소스 사용량 및 HPA 스케일링 이벤트 모니터링', highlight: 'HPA 스케일링 이벤트' },
+          { text: '장애 발생 시 빠른 원인 파악 가능', highlight: '빠른 원인 파악' },
+        ],
       },
     ],
     // 장애 전파 방지 전략

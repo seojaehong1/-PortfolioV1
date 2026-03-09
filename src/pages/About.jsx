@@ -39,30 +39,29 @@ const timeline = [
 // 핵심 가치
 const coreValues = [
   {
-    title: '관찰 가능성 (Observability)',
-    description: '시스템의 내부 상태를 외부에서 추론할 수 있도록 설계합니다. 로그, 메트릭, 트레이싱의 3요소를 통해 문제를 빠르게 파악합니다.',
+    title: '자동화 (Automation)',
+    description: '반복 작업을 자동화하여 개발팀이 개발에만 집중할 수 있는 환경을 만듭니다. CI/CD 파이프라인과 IaC를 통해 배포 효율을 높입니다.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       </svg>
     ),
   },
   {
-    title: '장애 전파 방지',
-    description: '하나의 서비스 장애가 전체 시스템을 마비시키지 않도록 설계합니다. 비동기 처리와 Circuit Breaker 패턴을 적용합니다.',
+    title: '모니터링 (Observability)',
+    description: 'Prometheus/Grafana로 시스템 상태를 실시간 모니터링합니다. 메트릭 수집과 시각화를 통해 문제를 빠르게 파악하고 대응합니다.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
   },
   {
-    title: '지속적 학습',
-    description: '새로운 기술을 꾸준히 학습하고 프로젝트에 적용합니다. 3+1 과정을 통해 이론과 실무의 균형을 갖추었습니다.',
+    title: '확장성 (Scalability)',
+    description: '트래픽 증가에 유연하게 대응할 수 있는 인프라를 설계합니다. HPA 자동 스케일링으로 안정적인 서비스 운영을 보장합니다.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
   },
@@ -163,16 +162,16 @@ export default function About() {
               </span>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                 안녕하세요,<br />
-                <span className="text-primary-600">신뢰할 수 있는 시스템</span>을 만드는<br />
-                개발자입니다.
+                <span className="text-primary-600">안정적인 인프라</span>를 구축하는<br />
+                DevOps Engineer입니다.
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
                 3년제 전문학사 과정에서 <strong>백엔드와 인프라의 기초</strong>를 다지고,
-                1년 학사 전공심화 과정을 통해 <strong>MSA 아키텍처와 AI 모델링</strong> 역량을 확보했습니다.
+                1년 학사 전공심화 과정을 통해 <strong>AWS EKS, Kubernetes 운영</strong> 역량을 확보했습니다.
                 <br /><br />
                 <span className="text-primary-600 font-medium">
-                  "시스템의 안정성을 책임지는 모니터링 기술의 핵심은 관찰 가능성(Observability)에 있다"
-                </span>는 것을 프로젝트를 통해 깨달았습니다.
+                  "개발팀이 개발에만 집중할 수 있는 환경을 만드는 것이 DevOps의 핵심"
+                </span>이라는 것을 프로젝트를 통해 깨달았습니다.
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Link to="/projects" className="btn-primary">
@@ -447,20 +446,18 @@ export default function About() {
         <div className="section-container">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-slate-600 text-lg leading-relaxed mb-8">
-              시스템의 안정성을 책임지는 모니터링 기술의 핵심은
-              <span className="text-slate-900 font-medium"> 관찰 가능성(Observability)</span>에 있다는 것을
-              프로젝트를 통해 깨달았습니다.
+              <span className="text-slate-900 font-medium">안정적인 인프라가 개발팀의 생산성을 좌우한다</span>는 것을 AWS EKS 배포 경험을 통해 깨달았습니다.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 text-sm mb-12">
               <span className="px-4 py-2 bg-white text-slate-600 rounded-lg border border-slate-200">
-                서비스 디스커버리
+                AWS EKS
               </span>
               <span className="px-4 py-2 bg-white text-slate-600 rounded-lg border border-slate-200">
-                분산 시스템 모니터링
+                Kubernetes 운영
               </span>
               <span className="px-4 py-2 bg-white text-slate-600 rounded-lg border border-slate-200">
-                장애 전파 방지
+                Prometheus/Grafana
               </span>
             </div>
 

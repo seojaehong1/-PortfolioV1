@@ -3,28 +3,24 @@ import { Link } from 'react-router-dom'
 // 스킬 카테고리 데이터
 const skillCategories = [
   {
-    title: 'Backend',
+    title: 'Infra / DevOps',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
     color: 'primary',
     skills: [
-      { name: 'Java 17', level: 90 },
-      { name: 'Spring Boot', level: 85 },
-      { name: 'Spring Cloud', level: 80 },
-      { name: 'Spring Security', level: 75 },
-      { name: 'JPA/Hibernate', level: 80 },
-      { name: 'Python', level: 85 },
-      { name: 'Flask', level: 80 },
-      { name: 'PostgreSQL', level: 80 },
-      { name: 'MySQL', level: 75 },
-      { name: 'RabbitMQ', level: 70 },
+      { name: 'AWS EKS', level: 85, highlight: true },
+      { name: 'Kubernetes', level: 85, highlight: true },
+      { name: 'Docker', level: 85 },
+      { name: 'AWS (EC2, ALB, ECR)', level: 80 },
+      { name: 'Helm', level: 75 },
+      { name: 'Linux', level: 80 },
     ],
   },
   {
-    title: 'AI / Data',
+    title: 'CI/CD & Monitoring',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -32,59 +28,52 @@ const skillCategories = [
     ),
     color: 'emerald',
     skills: [
-      { name: 'PyTorch', level: 80 },
-      { name: 'EfficientNet', level: 75 },
-      { name: 'CLIP', level: 70 },
-      { name: 'Weaviate', level: 75, highlight: true },
-      { name: 'Playwright', level: 85 },
-      { name: 'Pandas', level: 80 },
-      { name: 'NumPy', level: 80 },
-      { name: 'Scikit-learn', level: 70 },
+      { name: 'Prometheus', level: 80, highlight: true },
+      { name: 'Grafana', level: 80, highlight: true },
+      { name: 'GitHub Actions', level: 80 },
+      { name: 'ArgoCD', level: 75 },
+      { name: 'k6 (부하테스트)', level: 80 },
+      { name: 'Git', level: 90 },
     ],
   },
   {
-    title: 'DevOps',
+    title: 'Backend',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
       </svg>
     ),
     color: 'blue',
     skills: [
-      { name: 'Docker', level: 80 },
-      { name: 'Kubernetes', level: 75, highlight: true },
-      { name: 'Netflix Eureka', level: 80 },
-      { name: 'Spring Gateway', level: 80 },
-      { name: 'Git', level: 90 },
-      { name: 'GitHub Actions', level: 70 },
-      { name: 'Linux', level: 75 },
+      { name: 'Java 17', level: 85 },
+      { name: 'Spring Boot', level: 85 },
+      { name: 'Spring Cloud', level: 80 },
+      { name: 'Spring Data JPA', level: 80 },
+      { name: 'Python', level: 80 },
+      { name: 'RabbitMQ', level: 75 },
     ],
   },
   {
-    title: 'Frontend',
+    title: 'Database',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
       </svg>
     ),
     color: 'violet',
     skills: [
-      { name: 'React', level: 75 },
-      { name: 'Vue.js', level: 70 },
-      { name: 'Tailwind CSS', level: 85 },
-      { name: 'Thymeleaf', level: 80 },
-      { name: 'JavaScript', level: 80 },
-      { name: 'HTML/CSS', level: 90 },
+      { name: 'MySQL', level: 80 },
+      { name: 'PostgreSQL', level: 80 },
     ],
   },
 ]
 
-// 강조 스킬 (Kubernetes, Weaviate)
+// 강조 스킬 (AWS EKS, Prometheus/Grafana)
 const highlightedSkills = [
   {
-    name: 'Kubernetes',
-    category: 'DevOps',
-    description: 'MSA 프로젝트를 K8s 환경에 배포. Pod, Service, Deployment, ConfigMap 등을 활용한 컨테이너 오케스트레이션 경험.',
+    name: 'AWS EKS + Kubernetes',
+    category: 'Infra / DevOps',
+    description: '9개 MSA 서비스를 AWS EKS에 배포. HPA(CPU 70%, 메모리 80%)로 자동 스케일링 구성, ALB와 ECR을 활용한 서비스 라우팅 및 이미지 관리.',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 0L1.608 6v12L12 24l10.392-6V6L12 0zm6.138 14.788l-1.188-.326a4.185 4.185 0 01-.406.636l.528 1.072a.252.252 0 01-.096.324l-.892.516a.252.252 0 01-.336-.072l-.672-1.008a4.2 4.2 0 01-.756.096v1.2a.252.252 0 01-.252.252h-1.032a.252.252 0 01-.252-.252v-1.2a4.185 4.185 0 01-.756-.096l-.672 1.008a.252.252 0 01-.336.072l-.892-.516a.252.252 0 01-.096-.324l.528-1.072a4.185 4.185 0 01-.406-.636l-1.188.326a.252.252 0 01-.3-.168l-.288-.996a.252.252 0 01.168-.3l1.2-.336v-.012a4.2 4.2 0 01.048-.756l-1.068-.54a.252.252 0 01-.108-.336l.504-.888a.252.252 0 01.336-.108l1.02.516c.156-.204.336-.396.528-.564l-.54-1.08a.252.252 0 01.084-.336l.888-.516a.252.252 0 01.336.084l.54 1.068c.24-.072.492-.12.744-.144V7.2a.252.252 0 01.252-.252h1.032a.252.252 0 01.252.252v1.152c.252.024.504.072.744.144l.54-1.068a.252.252 0 01.336-.084l.888.516a.252.252 0 01.084.336l-.54 1.08c.192.168.372.36.528.564l1.02-.516a.252.252 0 01.336.108l.504.888a.252.252 0 01-.108.336l-1.068.54c.024.252.048.504.048.756v.012l1.2.336a.252.252 0 01.168.3l-.288.996a.252.252 0 01-.3.168zM12 10.2a1.8 1.8 0 100 3.6 1.8 1.8 0 000-3.6z" />
@@ -92,14 +81,12 @@ const highlightedSkills = [
     ),
   },
   {
-    name: 'Weaviate',
-    category: 'AI / Data',
-    description: 'CLIP 모델로 이미지를 벡터화하고, Weaviate에서 코사인 유사도 기반 실시간 검색 구현. 벡터 DB 설계 및 인덱싱 경험.',
+    name: 'Prometheus + Grafana',
+    category: 'Monitoring',
+    description: 'Prometheus로 메트릭 수집, Grafana 대시보드 구성. k6 부하테스트(100/500/1000 VU)로 HPA 스케일링 지연 구간 발견 및 임계값 최적화.',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
+        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
   },
@@ -148,7 +135,7 @@ export default function Skills() {
             기술 스택
           </h1>
           <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-lg">
-            백엔드부터 AI/ML, DevOps까지 End-to-End 개발에 필요한 기술 스택을 보유하고 있습니다.
+            AWS 클라우드 인프라부터 Kubernetes, CI/CD, 모니터링까지 DevOps 기술 스택을 보유하고 있습니다.
           </p>
         </div>
       </section>
@@ -245,20 +232,20 @@ export default function Skills() {
           <h3 className="text-lg font-semibold text-slate-900 mb-6 text-center">기술 요약</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary-600">9+</div>
-              <div className="text-sm text-slate-500 mt-1">Backend Skills</div>
+              <div className="text-3xl font-bold text-primary-600">6+</div>
+              <div className="text-sm text-slate-500 mt-1">Infra/DevOps</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-emerald-600">8+</div>
-              <div className="text-sm text-slate-500 mt-1">AI/Data Skills</div>
+              <div className="text-3xl font-bold text-emerald-600">6+</div>
+              <div className="text-sm text-slate-500 mt-1">CI/CD & Monitoring</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600">7+</div>
-              <div className="text-sm text-slate-500 mt-1">DevOps Skills</div>
+              <div className="text-3xl font-bold text-blue-600">6+</div>
+              <div className="text-sm text-slate-500 mt-1">Backend</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-violet-600">6+</div>
-              <div className="text-sm text-slate-500 mt-1">Frontend Skills</div>
+              <div className="text-3xl font-bold text-violet-600">2+</div>
+              <div className="text-sm text-slate-500 mt-1">Database</div>
             </div>
           </div>
         </div>
