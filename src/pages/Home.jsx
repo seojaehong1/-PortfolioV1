@@ -88,9 +88,18 @@ export default function Home() {
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-8">
-              <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
-              <span className="text-sm font-medium text-primary-700">DevOps Engineer</span>
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200">
+                <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
+                <span className="text-sm font-medium text-primary-700">DevOps Engineer</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200">
+                <svg className="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L1.5 6.5v11L12 22l10.5-4.5v-11L12 2zm0 2.31l7.36 3.15v7.08L12 17.69l-7.36-3.15V7.46L12 4.31z"/>
+                  <path d="M12 6.46L6.82 8.69v4.62L12 15.54l5.18-2.23V8.69L12 6.46z"/>
+                </svg>
+                <span className="text-sm font-medium text-amber-700">AWS SAA Certified</span>
+              </div>
             </div>
 
             {/* Main Heading */}

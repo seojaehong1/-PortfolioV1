@@ -90,6 +90,12 @@ const awards = [
 // 증서 & 상장 이미지
 const certificates = [
   {
+    category: '자격증',
+    items: [
+      { src: '/images/about/aws-saa.png', title: 'AWS Solutions Architect Associate', org: 'Amazon Web Services · 2026.03' },
+    ]
+  },
+  {
     category: '상장',
     items: [
       { src: '/images/about/testimonial_1.jpg', title: '최종 프로젝트 대상', org: '중앙정보기술인재개발원' },
