@@ -14,9 +14,11 @@ const skillCategories = [
       { name: 'AWS EKS', level: 85, highlight: true },
       { name: 'Kubernetes', level: 85, highlight: true },
       { name: 'Docker', level: 85 },
-      { name: 'AWS (EC2, ALB, ECR)', level: 80 },
+      { name: 'AWS (EC2, ALB, ECR, VPC)', level: 80 },
+      { name: 'Terraform (IaC)', level: 80, highlight: true },
       { name: 'Helm', level: 75 },
       { name: 'Linux', level: 80 },
+      { name: 'Nginx', level: 75 },
     ],
   },
   {
@@ -32,6 +34,9 @@ const skillCategories = [
       { name: 'Grafana', level: 80, highlight: true },
       { name: 'GitHub Actions', level: 80 },
       { name: 'ArgoCD', level: 75 },
+      { name: 'Istio (서비스 메시)', level: 75, highlight: true },
+      { name: 'EFK Stack', level: 75 },
+      { name: 'Chaos Mesh', level: 70 },
       { name: 'k6 (부하테스트)', level: 80 },
       { name: 'Git', level: 90 },
     ],
@@ -64,11 +69,12 @@ const skillCategories = [
     skills: [
       { name: 'MySQL', level: 80 },
       { name: 'PostgreSQL', level: 80 },
+      { name: 'Oracle', level: 70 },
     ],
   },
 ]
 
-// 강조 스킬 (AWS EKS, Prometheus/Grafana)
+// 강조 스킬 (AWS EKS, Prometheus/Grafana, Terraform, Istio)
 const highlightedSkills = [
   {
     name: 'AWS EKS + Kubernetes',
@@ -81,12 +87,32 @@ const highlightedSkills = [
     ),
   },
   {
+    name: 'Terraform (IaC)',
+    category: 'Infrastructure as Code',
+    description: 'eksctl로 생성한 인프라를 Terraform으로 코드화. 22개 리소스를 Git으로 버전 관리하여 인프라 변경 이력 추적 및 재현 가능한 환경 구축.',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M1 0h9v6H1V0zm0 8h9v6H1V8zm11-8h9v6h-9V0zm0 8h9v6h-9V8zm-11 8h9v6H1v-6zm11 0h9v6h-9v-6z"/>
+      </svg>
+    ),
+  },
+  {
     name: 'Prometheus + Grafana',
     category: 'Monitoring',
     description: 'Prometheus로 메트릭 수집, Grafana 대시보드 구성. k6 부하테스트(100/500/1000 VU)로 HPA 스케일링 지연 구간 발견 및 임계값 최적화.',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Istio Service Mesh',
+    category: 'Security / Traffic',
+    description: 'mTLS STRICT로 서비스 간 통신 암호화, Kiali로 트래픽 흐름 시각화. Sidecar 자동 주입으로 코드 수정 없이 서비스 메시 적용.',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M4 4l8-4 8 4v16l-8 4-8-4V4zm8 2L6 9v6l6 3 6-3V9l-6-3z"/>
       </svg>
     ),
   },
@@ -232,11 +258,11 @@ export default function Skills() {
           <h3 className="text-lg font-semibold text-slate-900 mb-6 text-center">기술 요약</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary-600">6+</div>
+              <div className="text-3xl font-bold text-primary-600">8+</div>
               <div className="text-sm text-slate-500 mt-1">Infra/DevOps</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-emerald-600">6+</div>
+              <div className="text-3xl font-bold text-emerald-600">9+</div>
               <div className="text-sm text-slate-500 mt-1">CI/CD & Monitoring</div>
             </div>
             <div>
@@ -244,7 +270,7 @@ export default function Skills() {
               <div className="text-sm text-slate-500 mt-1">Backend</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-violet-600">2+</div>
+              <div className="text-3xl font-bold text-violet-600">3+</div>
               <div className="text-sm text-slate-500 mt-1">Database</div>
             </div>
           </div>

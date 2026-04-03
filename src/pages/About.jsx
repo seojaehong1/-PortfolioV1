@@ -12,12 +12,13 @@ const timeline = [
     award: '최종 프로젝트 대상',
   },
   {
-    year: '2025 - 2026',
-    title: '동서울대학교 학사학위 전공심화',
-    subtitle: '컴퓨터소프트웨어학과 (4년제 학사)',
-    description: 'MSA 아키텍처 및 AI 모델링 등 고급 기술 역량 확보. 4년 전 과정 동안 최상위권 학업 성취도 유지.',
+    year: '2022 - 2026',
+    title: '동서울대학교 졸업',
+    subtitle: '컴퓨터소프트웨어학과 (학사)',
+    description: 'MSA 아키텍처 및 AI 모델링 등 고급 기술 역량 확보. GPA 4.2 / 4.5',
     highlight: true,
     award: '총장상 (학년대표)',
+    gpa: '4.2 / 4.5',
   },
   {
     year: '2024.11',
@@ -26,13 +27,6 @@ const timeline = [
     description: '초기 MSA 구조 설계와 팀 협업을 통해 실무형 프로젝트 구현 역량을 검증받음.',
     highlight: false,
     award: '장려상',
-  },
-  {
-    year: '2022 - 2025',
-    title: '동서울대학교 전문학사',
-    subtitle: '컴퓨터소프트웨어과 (3년제)',
-    description: '백엔드 개발 및 인프라의 기초를 탄탄히 다짐. Java, Spring Boot, 데이터베이스 설계 역량 확보.',
-    highlight: false,
   },
 ]
 
@@ -92,7 +86,7 @@ const certificates = [
   {
     category: '자격증',
     items: [
-      { src: '/images/about/aws-saa.png', title: 'AWS Solutions Architect Associate', org: 'Amazon Web Services · 2026.03' },
+      { src: '/images/about/aws-saa.png', title: 'AWS Solutions Architect Associate', org: 'Amazon Web Services · 2026.03 (823점)' },
     ]
   },
   {
@@ -124,7 +118,7 @@ const scholarships = [
   {
     name: '모범장학금',
     organization: '동서울대학교',
-    year: '2026.06',
+    year: '2025.06',
     description: '학업 성적 및 학교 생활 태도 인정',
     detail: '전반적인 학교 생활에서의 모범적 태도',
   },
@@ -156,7 +150,7 @@ export default function About() {
                 </div>
                 {/* Decorative Badge */}
                 <div className="absolute -bottom-4 -right-4 bg-primary-600 text-white px-4 py-2 rounded-lg shadow-lg">
-                  <span className="text-sm font-semibold">3+1 학사</span>
+                  <span className="text-sm font-semibold">GPA 4.2/4.5</span>
                 </div>
               </div>
             </div>
@@ -172,12 +166,12 @@ export default function About() {
                 DevOps Engineer입니다.
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                3년제 전문학사 과정에서 <strong>백엔드와 인프라의 기초</strong>를 다지고,
-                1년 학사 전공심화 과정을 통해 <strong>AWS EKS, Kubernetes 운영</strong> 역량을 확보했습니다.
+                동서울대학교 컴퓨터소프트웨어학과에서 <strong>백엔드와 인프라의 기초</strong>를 다지고,
+                <strong>AWS EKS, Kubernetes 운영</strong> 역량을 확보했습니다.
                 <br /><br />
                 <span className="text-primary-600 font-medium">
-                  "개발팀이 개발에만 집중할 수 있는 환경을 만드는 것이 DevOps의 핵심"
-                </span>이라는 것을 프로젝트를 통해 깨달았습니다.
+                  "안정적인 인프라 설계와 CI/CD 자동화로 개발팀이 비즈니스에 집중할 수 있는 환경을 만든다"
+                </span>는 것이 저의 DevOps 철학입니다.
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Link to="/projects" className="btn-primary">
@@ -203,7 +197,7 @@ export default function About() {
                 329명 중 단 한 명, 학년 대표
               </h2>
               <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-                3년 전문학사 + 1년 학사 전공심화, 4년간의 꾸준한 노력이<br />
+                4년간의 꾸준한 노력이<br />
                 졸업식 학년대표 총장상 수여라는 결실로 이어졌습니다.
               </p>
             </div>
@@ -231,11 +225,11 @@ export default function About() {
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 bg-slate-400 rounded-full"></div>
-                    <p className="text-slate-600 text-sm">4년 전 과정 <span className="text-slate-900 font-medium">최상위권</span> 학업 성취도 유지</p>
+                    <p className="text-slate-600 text-sm">4년 전 과정 <span className="text-slate-900 font-medium">GPA 4.2/4.5</span> 학업 성취도 유지</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 bg-slate-400 rounded-full"></div>
-                    <p className="text-slate-600 text-sm">전문학사 → 학사 <span className="text-slate-900 font-medium">3+1 과정</span> 완주</p>
+                    <p className="text-slate-600 text-sm">컴퓨터소프트웨어학과 <span className="text-slate-900 font-medium">학사 학위</span> 취득</p>
                   </div>
                 </div>
 
@@ -248,7 +242,7 @@ export default function About() {
                     <span className="px-3 py-1.5 bg-slate-900 text-white rounded font-medium">2026</span>
                   </div>
                   <div className="flex justify-between mt-2 text-xs text-slate-500">
-                    <span>전문학사 입학</span>
+                    <span>입학</span>
                     <span>학년대표 수상</span>
                   </div>
                 </div>

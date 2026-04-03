@@ -232,6 +232,113 @@ const systemColors = {
   emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', badge: 'bg-emerald-100 text-emerald-700', icon: 'bg-emerald-500' },
 }
 
+// 냉장고를 부탁해 프로젝트 상세 컴포넌트
+const FridgeProjectDetail = ({ project }) => (
+  <>
+    {/* 주요 기능 */}
+    <div className="card p-8 mb-10">
+      <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        주요 기능
+      </h3>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {project.keyFeatures.map((feature, idx) => {
+          const colorMap = {
+            emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', icon: 'bg-emerald-500', text: 'text-emerald-600' },
+            blue: { bg: 'bg-blue-50', border: 'border-blue-200', icon: 'bg-blue-500', text: 'text-blue-600' },
+            violet: { bg: 'bg-violet-50', border: 'border-violet-200', icon: 'bg-violet-500', text: 'text-violet-600' },
+          }
+          const colors = colorMap[feature.color] || colorMap.blue
+          return (
+            <div key={idx} className={`${colors.bg} ${colors.border} border rounded-xl p-6`}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`w-10 h-10 rounded-lg ${colors.icon} flex items-center justify-center text-white font-bold`}>
+                  {idx + 1}
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900">{feature.title}</h4>
+                  <span className={`text-xs ${colors.text} font-medium`}>{feature.subtitle}</span>
+                </div>
+              </div>
+              <ul className="space-y-2 text-sm text-slate-600">
+                {feature.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-slate-400 mt-0.5">—</span>
+                    <span dangerouslySetInnerHTML={{
+                      __html: item.text.replace(item.highlight, `<strong class="text-slate-700">${item.highlight}</strong>`)
+                    }} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+
+    {/* 담당 역할 */}
+    <div className="card p-8 mb-10 border-2 border-primary-200 bg-gradient-to-br from-primary-50/30 to-white">
+      <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+        담당 역할
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {project.responsibilities.map((resp, idx) => (
+          <div key={idx} className="flex items-start gap-3 p-3 bg-white rounded-lg border border-slate-200">
+            <span className="w-6 h-6 rounded-full bg-primary-100 text-primary-600 text-xs font-bold flex items-center justify-center flex-shrink-0">
+              {idx + 1}
+            </span>
+            <span className="text-sm text-slate-700">{resp}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* 고민했던 점 */}
+    <div className="card p-8 mb-10">
+      <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+        <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        개발하며 고민했던 점
+      </h4>
+      <div className="space-y-3">
+        {project.challenges.map((c, idx) => (
+          <div key={idx} className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg">
+            <span className="text-rose-500 font-bold">Q.</span>
+            <div>
+              <p className="text-sm text-slate-700 mb-1">"{c.problem}"</p>
+              <p className="text-sm text-slate-600">→ <strong className="text-emerald-600">{c.solution}</strong></p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* 수상 */}
+    {project.achievement && (
+      <div className="card p-8 mb-10 bg-gradient-to-br from-amber-50 to-white border-2 border-amber-200">
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-xl bg-amber-500 flex items-center justify-center">
+            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold text-slate-900">{project.achievement.title}</h4>
+            <p className="text-sm text-slate-600">{project.achievement.subtitle}</p>
+          </div>
+        </div>
+      </div>
+    )}
+  </>
+)
+
 // AI 프로젝트 상세 컴포넌트
 const AIProjectDetail = ({ project }) => (
   <>
@@ -438,6 +545,8 @@ export default function ProjectDetail() {
         <div className="section-container">
           {project.id === 'msa' ? (
             <MSAProjectDetail project={project} />
+          ) : project.id === 'fridge' ? (
+            <FridgeProjectDetail project={project} />
           ) : (
             <AIProjectDetail project={project} />
           )}

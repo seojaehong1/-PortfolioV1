@@ -74,7 +74,8 @@ const coreCompetencies = [
 const techStack = [
   { name: 'AWS EKS', category: 'Cloud' },
   { name: 'Kubernetes', category: 'DevOps' },
-  { name: 'Docker', category: 'DevOps' },
+  { name: 'Terraform', category: 'IaC' },
+  { name: 'Istio', category: 'Service Mesh' },
   { name: 'Prometheus', category: 'Monitoring' },
   { name: 'Grafana', category: 'Monitoring' },
   { name: 'ArgoCD', category: 'CI/CD' },
@@ -255,11 +256,11 @@ export default function Home() {
             <div className="lg:w-1/2">
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  { name: 'AWS', icon: '☁️' },
+                  { name: 'AWS EKS', icon: '☁️' },
                   { name: 'K8s', icon: '☸️' },
-                  { name: 'Docker', icon: '🐳' },
+                  { name: 'Terraform', icon: '🏗️' },
+                  { name: 'Istio', icon: '🔒' },
                   { name: 'Prometheus', icon: '🔥' },
-                  { name: 'Grafana', icon: '📊' },
                   { name: 'ArgoCD', icon: '🔄' },
                 ].map((skill) => (
                   <div

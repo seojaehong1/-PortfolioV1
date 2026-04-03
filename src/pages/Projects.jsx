@@ -30,24 +30,23 @@ const ProjectCard = ({ project }) => (
         </div>
       )}
 
-      {/* Icon/Visual */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        {project.id === 'msa' ? (
+      {/* Thumbnail Image */}
+      {project.thumbnail ? (
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-slate-300 group-hover:text-primary-400 transition-colors">
             <svg className="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
                 d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
             </svg>
           </div>
-        ) : (
-          <div className="text-slate-300 group-hover:text-primary-400 transition-colors">
-            <svg className="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Hover Overlay */}
       <div className="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/10 transition-colors"></div>
@@ -100,8 +99,8 @@ export default function Projects() {
             <span className="text-sm font-medium text-primary-600 tracking-wider uppercase">Projects</span>
             <h1 className="mt-2 text-4xl font-bold text-slate-900">프로젝트</h1>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-              분산 시스템 설계부터 데이터 파이프라인 구축까지,<br />
-              실무 수준의 프로젝트입니다.
+              팀 프로젝트와 개인 프로젝트를 통해<br />
+              배우고 성장한 기록입니다.
             </p>
           </div>
         </div>
